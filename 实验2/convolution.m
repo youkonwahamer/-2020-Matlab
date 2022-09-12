@@ -1,0 +1,65 @@
+clear all;
+n=-10:1:10;
+figure(1);
+An=zeros(size(n));
+An=sin(n*pi*0.5)./(n*pi*0.5);
+An(abs(An)<10e-10)=0;
+An(11)=1;
+
+stem(5000*n,An);
+hold on;
+n=-10:0.001:10;
+An=zeros(size(n));
+An=sin(n*pi*0.5)./(n*pi*0.5);
+An(abs(An)<10e-10)=0;
+plot(5000*n,An);
+xlabel('w');
+ylabel('Fn');
+% clear all;
+% t=-2:0.01:4;
+% m=-4:0.01:8;
+% figure(1);
+% f1=zeros(size(t));
+% f2=zeros(size(t));
+% f3=zeros(size(t));
+% f1=(-2)*(us(t-0.5)-us(t-2));
+% f2=(2*t+2).*(us(t+1)-us(t-2));
+% f3=0.01*conv(f1,f2);
+% plot(t,f1,'g');
+% axis([-6,6,-16,16]);%%设置坐标值范围
+% hold on;
+% plot(t,f2,'b');
+% axis manual;
+% hold on;
+% plot(m,f3,'r');
+% legend('f1','f2','f3');
+% title({'卷积'},'FontSize',24);
+% 
+% figure(2);
+% f4=0.01*conv(f1,f1);
+% plot(m,f4,'k');
+% hold on;
+% plot(t,f1,'r');
+% hold on;
+% title({'矩形自卷积'},'FontSize',24);
+% figure(3);
+% clear all;
+% t=0:0.01:3;
+% s=-2:0.01:4;
+% m=-2:0.01:7;
+% f1=zeros(size(t));
+% f2=zeros(size(t));
+% f3=zeros(size(t));
+% f1=(-2)*(us(t-0.5)-us(t-2));
+% f2=(2*s+2).*(us(s+1)-us(s-2));
+% f3=0.01*conv(f1,f2);
+% plot(t,f1,'g');
+% axis([-6,6,-16,16]);%%设置坐标值范围
+% hold on;
+% plot(s,f2,'b');
+% axis manual;
+% hold on;
+% plot(m,f3,'r');
+% legend('f1','f2','f3');
+% title({'卷积'},'FontSize',24);
+% %
